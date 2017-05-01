@@ -22,14 +22,16 @@ public final class Spinner {
       while self.willContinue {
         // output("\u{001B}[2K")
         // output("\u{001B}[0K")
-        self.output("\u{001B}[1A\n")
         self.output(self.characters[index])
         index += 1
         if self.characters.indices.contains(index) == false {
           index = 0
         }
         self.wait(seconds: 0.05)
+        self.output("\u{001B}[1A\n")
       }
+     
+      self.output("\u{001B}[1A\n")      
     }
   }
   
